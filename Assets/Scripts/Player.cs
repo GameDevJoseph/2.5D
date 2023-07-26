@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     float _yVelocity;
     bool _canDoubleJump = false;
 
+    [SerializeField] int _coinAmount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,4 +49,11 @@ public class Player : MonoBehaviour
         velocity.y = _yVelocity;
         _controller.Move(velocity * Time.deltaTime);
     }
+
+    public void AddCoin()
+    {
+        _coinAmount += 1;
+        UIManager.Instance.UpdateCoinDisplay(_coinAmount);
+    }
+
 }

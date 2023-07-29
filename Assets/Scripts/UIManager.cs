@@ -6,7 +6,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     private static UIManager _instance;
-    [SerializeField] TMP_Text _coinText;
+    [SerializeField] TMP_Text _coinText, _livesText;
 
     public static UIManager Instance
     {
@@ -32,5 +32,10 @@ public class UIManager : MonoBehaviour
     public void UpdateCoinDisplay(int amount)
     {
         _coinText.text = "Coins: " + amount.ToString();
+    }
+
+    public void UpdateLivesDisplay(int lives)
+    {
+        _livesText.text = "Lives: " + lives.ToString();
     }
 }
